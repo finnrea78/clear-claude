@@ -1,12 +1,13 @@
 {
-  "description": "clear-claude: dyslexia-friendly output formatting for Claude Code",
   "hooks": {
     "SessionStart": [
       {
+        "matcher": "startup|resume|clear|compact",
         "hooks": [
           {
             "type": "command",
-            "command": "${CLAUDE_PLUGIN_ROOT}/hooks-handlers/session-start.sh"
+            "command": "\"${CLAUDE_PLUGIN_ROOT}/hooks-handlers/session-start.sh\"",
+            "async": false
           }
         ]
       }

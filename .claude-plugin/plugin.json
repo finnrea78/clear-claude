@@ -1,0 +1,9 @@
+{
+  "name": "clear-claude",
+  "description": "Dyslexia-friendly output formatting for Claude Code",
+  "version": "1.0.0",
+  "author": {
+    "name": "Finn Rea"
+  },
+  "license": "MIT"
+}
