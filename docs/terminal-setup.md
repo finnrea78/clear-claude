@@ -18,7 +18,7 @@ These recommendations are based on research from the British Dyslexia Associatio
 
 **Avoid:** Decorative fonts, serif fonts, and italic text.
 
-## Colors
+## Colours
 
 **Key rule:** Avoid pure black (#000000) on pure white (#FFFFFF). The high contrast causes glare.
 
