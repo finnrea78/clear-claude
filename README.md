@@ -32,34 +32,84 @@ When clear-claude is active, Claude follows these formatting rules:
 
 ## Installation
 
-### Option 1: Clone and register as a plugin
+### Option 1: Clone and install (recommended)
+
+Clone the repo anywhere you like:
 
 ```bash
-git clone https://github.com/finnrea78/clear-claude.git ~/.claude/plugins/clear-claude
+git clone https://github.com/finnrea78/clear-claude.git ~/Developer/clear-claude
 ```
 
-Then add to your `~/.claude/settings.json`:
+Run the install script:
+
+```bash
+~/Developer/clear-claude/install.sh
+```
+
+This does three things:
+1. Symlinks the slash commands into `~/.claude/commands/clear-claude/`
+2. Adds a SessionStart hook to `~/.claude/settings.json`
+3. Makes the hook script executable
+
+To update later, just `git pull` — the symlinks keep everything in sync.
+
+### Option 2: Manual install
+
+If you prefer to set things up yourself:
+
+**1. Clone the repo:**
+
+```bash
+git clone https://github.com/finnrea78/clear-claude.git ~/Developer/clear-claude
+```
+
+**2. Create command symlinks:**
+
+```bash
+mkdir -p ~/.claude/commands/clear-claude
+ln -sf ~/Developer/clear-claude/commands/status.md ~/.claude/commands/clear-claude/status.md
+ln -sf ~/Developer/clear-claude/commands/terminal-setup.md ~/.claude/commands/clear-claude/terminal-setup.md
+```
+
+**3. Add the SessionStart hook to `~/.claude/settings.json`:**
+
+Add this entry to the `hooks.SessionStart` array (create the array if it doesn't exist):
 
 ```json
 {
-  "enabledPlugins": {
-    "clear-claude@local": true
-  }
+  "hooks": [
+    {
+      "type": "command",
+      "command": "YOUR_CLONE_PATH/hooks-handlers/session-start.sh"
+    }
+  ]
 }
 ```
 
-### Option 2: CLAUDE.md snippet
+Replace `YOUR_CLONE_PATH` with the absolute path to your clone (e.g. `/home/you/Developer/clear-claude`).
 
-If you prefer not to install a plugin, copy the snippet from [`docs/claude-md-snippet.md`](docs/claude-md-snippet.md) into your project's `CLAUDE.md` file. This applies the same rules to a single project.
+**4. Make the hook executable:**
+
+```bash
+chmod +x ~/Developer/clear-claude/hooks-handlers/session-start.sh
+```
+
+### Option 3: CLAUDE.md snippet
+
+If you only want the formatting rules for a single project (no commands or hooks), copy the snippet from [`docs/claude-md-snippet.md`](docs/claude-md-snippet.md) into your project's `CLAUDE.md` file.
 
 ## Terminal Setup
 
-For the best experience, configure your terminal for dyslexia-friendly reading. See [`docs/terminal-setup.md`](docs/terminal-setup.md) for font, color, and spacing recommendations with copy-paste config snippets.
+For the best experience, run `/clear-claude:terminal-setup` in Claude Code. It will configure your terminal with dyslexia-friendly fonts, colours, and spacing.
+
+You can choose between **dark mode** and **light mode** (Solarized Dark / Solarized Light).
+
+Supports: Gnome Terminal, Kitty, Ghostty, Alacritty.
 
 **Quick version:**
-- Use **Lexend** font at 14pt+ (or Verdana, Arial, Calibri)
-- Avoid pure black on pure white — try Solarized Light
-- Set line height to 1.5x
+- **JetBrains Mono** font at 14pt (monospace, good letter distinction)
+- Avoid pure black on pure white — Solarized themes maintain 4.5:1+ contrast
+- Line height at 1.5x, letter spacing increased 5%
 - Keep terminal width around 80 columns
 
 ## The Research
