@@ -57,6 +57,19 @@ Chunking information into bullet points, short paragraphs, and clear headers red
 
 - Bacon et al. (2019). "Working memory and reading in children with and without dyslexia." [PMC6808376](https://pmc.ncbi.nlm.nih.gov/articles/PMC6808376/)
 
+## Bionic Reading (Considered and Rejected)
+
+Bionic Reading bolds the first few letters of each word to create "fixation points." The claim is that this helps the brain recognise words faster, increasing reading speed.
+
+**clear-claude does not use bionic reading. The evidence shows it does not work.**
+
+The technique was never tested on dyslexic readers. The original study used only 12 participants with unclear results. A peer-reviewed study with 245 participants found no significant difference in reading speed or comprehension. A larger test of 2,074 readers found participants actually read 2.6 words per minute **slower** with bionic text.
+
+The core premise is flawed. Reading speed is limited by language processing — turning letters into words into meaning — not by visual word recognition. Bionic reading addresses the wrong bottleneck. For dyslexic readers specifically, research suggests that slowing down improves comprehension, which is the opposite of what speed-reading techniques aim for.
+
+- Kopp et al. (2024). "No, Bionic Reading does not work." *Acta Psychologica*. [PubMed 38723450](https://pubmed.ncbi.nlm.nih.gov/38723450/)
+- Readwise (2022). "Does Bionic Reading actually work? We tested 2,074 readers." [Blog post](https://blog.readwise.io/bionic-reading-results/)
+
 ## The Barrington Stoke Principle
 
 Barrington Stoke publishes dyslexia-friendly editions of books including Animal Farm. The text is **completely unabridged**. Nothing is simplified or removed.
